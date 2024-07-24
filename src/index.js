@@ -152,6 +152,7 @@ export default class ImageTool {
       buttonContent: config.buttonContent || '',
       uploader: config.uploader || undefined,
       actions: config.actions || [],
+      setUserObj: config.setUserObj || undefined,
     };
 
     /**
@@ -216,9 +217,9 @@ export default class ImageTool {
    * @returns {ImageToolData}
    */
   save() {
-    const caption = this.ui.nodes.caption;
+    // const caption = this.ui.nodes.caption;
 
-    this._data.caption = caption.innerHTML;
+    // this._data.caption = caption.innerHTML;
 
     return this.data;
   }
@@ -290,7 +291,7 @@ export default class ImageTool {
        * Drag n drop file from into the Editor
        */
       files: {
-        mimeTypes: [ 'image/*' ],
+        mimeTypes: ['image/*'],
       },
     };
   }
@@ -352,7 +353,7 @@ export default class ImageTool {
     this.image = data.file;
 
     this._data.caption = data.caption || '';
-    this.ui.fillCaption(this._data.caption);
+    // this.ui.fillCaption(this._data.caption);
 
     ImageTool.tunes.forEach(({ name: tune }) => {
       const value = typeof data[tune] !== 'undefined' ? data[tune] === true || data[tune] === 'true' : false;
@@ -383,7 +384,7 @@ export default class ImageTool {
     this._data.file = file || {};
 
     if (file && file.url) {
-      this.ui.fillImage(file.url);
+      // this.ui.fillImage(file.url);
     }
   }
 

@@ -22,13 +22,13 @@ export default class Ui {
     this.readOnly = readOnly;
     this.nodes = {
       wrapper: make('div', [this.CSS.baseClass, this.CSS.wrapper]),
-      imageContainer: make('div', [ this.CSS.imageContainer ]),
+      imageContainer: make('div', [this.CSS.imageContainer]),
       fileButton: this.createFileButton(),
       imageEl: undefined,
       imagePreloader: make('div', this.CSS.imagePreloader),
-      caption: make('div', [this.CSS.input, this.CSS.caption], {
-        contentEditable: !this.readOnly,
-      }),
+      // caption: make('div', [this.CSS.input, this.CSS.caption], {
+      //   contentEditable: !this.readOnly,
+      // }),
     };
 
     /**
@@ -41,11 +41,11 @@ export default class Ui {
      *    <select-file-button />
      *  </wrapper>
      */
-    this.nodes.caption.dataset.placeholder = this.config.captionPlaceholder;
-    this.nodes.imageContainer.appendChild(this.nodes.imagePreloader);
-    this.nodes.wrapper.appendChild(this.nodes.imageContainer);
-    this.nodes.wrapper.appendChild(this.nodes.caption);
-    this.nodes.wrapper.appendChild(this.nodes.fileButton);
+    // this.nodes.caption.dataset.placeholder = this.config.captionPlaceholder;
+    // this.nodes.imageContainer.appendChild(this.nodes.imagePreloader);
+    // this.nodes.wrapper.appendChild(this.nodes.imageContainer);
+    // this.nodes.wrapper.appendChild(this.nodes.caption);
+    // this.nodes.wrapper.appendChild(this.nodes.fileButton);
   }
 
   /**
@@ -67,7 +67,7 @@ export default class Ui {
       imageContainer: 'image-tool__image',
       imagePreloader: 'image-tool__image-preloader',
       imageEl: 'image-tool__image-picture',
-      caption: 'image-tool__caption',
+      // caption: 'image-tool__caption',
     };
   };
 
@@ -109,7 +109,7 @@ export default class Ui {
    * @returns {Element}
    */
   createFileButton() {
-    const button = make('div', [ this.CSS.button ]);
+    const button = make('div', [this.CSS.button]);
 
     button.innerHTML = this.config.buttonContent || `${IconPicture} ${this.api.i18n.t('Select an Image')}`;
 
@@ -221,7 +221,7 @@ export default class Ui {
    */
   fillCaption(text) {
     if (this.nodes.caption) {
-      this.nodes.caption.innerHTML = text;
+      // this.nodes.caption.innerHTML = text;
     }
   }
 
